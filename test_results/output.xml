@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200205 06:55:30.363" rpa="false">
+<suite id="s1" name="Sample" source="C:\OtherProjects\RobotDemo\sample.robot">
+<kw name="Before Suite" library="base_test" type="setup">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>result_format=${TIMESTAMP_FORMAT}</arg>
+</arguments>
+<assign>
+<var>${timestamp}</var>
+</assign>
+<msg timestamp="20200205 06:55:30.723" level="INFO">${timestamp} = 2020-02-05 06.55.30</msg>
+<status status="PASS" starttime="20200205 06:55:30.723" endtime="20200205 06:55:30.723"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${OUTPUT_DIR}/screenshots/${timestamp} ${SUITE_NAME}/</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:30.723" endtime="20200205 06:55:30.723"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:30.723" endtime="20200205 06:55:30.723"></status>
+</kw>
+<test id="s1-t1" name="1. Verify smth">
+<kw name="Before Test" library="base_test" type="setup">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:30.723" endtime="20200205 06:55:30.723"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${Portal_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>maximize browser window</arg>
+</arguments>
+<msg timestamp="20200205 06:55:30.723" level="INFO">Opening browser 'chrome' to base url 'https://cltqacep1490.csiqa.local/CamstarPortal'.</msg>
+<status status="PASS" starttime="20200205 06:55:30.723" endtime="20200205 06:55:34.866"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200205 06:55:34.866" endtime="20200205 06:55:36.013"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Log In</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:36.014" endtime="20200205 06:55:37.105"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:30.723" endtime="20200205 06:55:37.105"></status>
+</kw>
+<kw name="Given I logged in MFGPortal as" library="login_page">
+<arguments>
+<arg>CamstarAdmin</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${USER_NAME_TXT}</arg>
+<arg>${user_name}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:37.106" level="INFO">Typing text 'CamstarAdmin' into text field '//div[@class='aw-widgets-propertyContainer ng-scope ng-isolate-scope']//aw-property-text-box-val[@class='ng-isolate-scope']//input[@type='text']'.</msg>
+<status status="PASS" starttime="20200205 06:55:37.106" endtime="20200205 06:55:37.283"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASSWORD_TXT}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:37.283" level="INFO">Typing text 'JJuneSummer((99' into text field '//div[@class='aw-widgets-propertyContainer ng-isolate-scope']//input[@type='password']'.</msg>
+<status status="PASS" starttime="20200205 06:55:37.283" endtime="20200205 06:55:37.448"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${DOMAIN_TXT}</arg>
+<arg>${DOMAIN}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:37.449" level="INFO">Typing text 'csiqa.local' into text field '//input[contains(@class,'gwt-ListBox')]'.</msg>
+<status status="PASS" starttime="20200205 06:55:37.449" endtime="20200205 06:55:37.608"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOG_ON_BTN}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:37.609" level="INFO">Clicking button '//button[@class='aw-base-blk-button ng-scope ng-isolate-scope']'.</msg>
+<status status="PASS" starttime="20200205 06:55:37.609" endtime="20200205 06:55:37.693"></status>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.readyState === 'complete'</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:37.693" endtime="20200205 06:55:37.699"></status>
+</kw>
+<kw name="Do Nothing" library="CustomLib">
+<arguments>
+<arg>Hello World</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:37.699" endtime="20200205 06:55:37.699"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:37.105" endtime="20200205 06:55:37.699"></status>
+</kw>
+<kw name="When I open menu Container | Start" library="home_page">
+<kw name="Expand More Menu If Needed" library="home_page">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element should be visible</arg>
+<arg>${MORE_BTN}</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${MORE_BTN}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200205 06:55:39.583" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2020-02-05%2006.55.30%20Sample/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/2020-02-05%2006.55.30%20Sample/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200205 06:55:37.727" endtime="20200205 06:55:39.583"></status>
+</kw>
+<msg timestamp="20200205 06:55:39.586" level="FAIL">The element 'css:button[title='More...']' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20200205 06:55:37.701" endtime="20200205 06:55:39.586"></status>
+</kw>
+<msg timestamp="20200205 06:55:39.586" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200205 06:55:37.700" endtime="20200205 06:55:39.586"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>click element</arg>
+<arg>${MORE_BTN}</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:39.587" endtime="20200205 06:55:39.589"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:37.700" endtime="20200205 06:55:39.592"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTAINER_MENU}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:39.593" level="INFO">Clicking element '//div[@class='aw-commands-wrapper']/descendant::button[@id='Container']'.</msg>
+<status status="PASS" starttime="20200205 06:55:39.592" endtime="20200205 06:55:39.932"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${CONTAINER_START_MENU}</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:39.932" endtime="20200205 06:55:40.120"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${CONTAINER_START_MENU}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:40.121" level="INFO">Clicking element '//div[@class='aw-ui-treeNode-valueContainer']/descendant::a[@title='Start']'.</msg>
+<status status="PASS" starttime="20200205 06:55:40.121" endtime="20200205 06:55:40.192"></status>
+</kw>
+<kw name="Switch to tab frame" library="home_page">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20200205 06:55:40.193" endtime="20200205 06:55:40.211"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>css:iframe[name*='apollo']</arg>
+</arguments>
+<msg timestamp="20200205 06:55:40.211" level="INFO">Selecting frame 'css:iframe[name*='apollo']'.</msg>
+<status status="PASS" starttime="20200205 06:55:40.211" endtime="20200205 06:55:40.247"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>css:iframe[id*='tabfr_']</arg>
+</arguments>
+<msg timestamp="20200205 06:55:40.247" level="INFO">Selecting frame 'css:iframe[id*='tabfr_']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200205 06:55:45.718" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2020-02-05%2006.55.30%20Sample/selenium-screenshot-2.png"&gt;&lt;img src="screenshots/2020-02-05%2006.55.30%20Sample/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200205 06:55:45.318" endtime="20200205 06:55:45.734"></status>
+</kw>
+<msg timestamp="20200205 06:55:45.734" level="FAIL">Element with locator 'css:iframe[id*='tabfr_']' not found.</msg>
+<status status="FAIL" starttime="20200205 06:55:40.247" endtime="20200205 06:55:45.734"></status>
+</kw>
+<status status="FAIL" starttime="20200205 06:55:40.192" endtime="20200205 06:55:45.734"></status>
+</kw>
+<status status="FAIL" starttime="20200205 06:55:37.700" endtime="20200205 06:55:45.734"></status>
+</kw>
+<kw name="After Test" library="base_test" type="teardown">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'Positive' in @{TEST TAGS}</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}_{index}.png</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${TEST_NAME}_{index}.png</arg>
+</arguments>
+<msg timestamp="20200205 06:55:46.216" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2020-02-05%2006.55.30%20Sample/1.%20Verify%20smth_1.png"&gt;&lt;img src="screenshots/2020-02-05%2006.55.30%20Sample/1.%20Verify%20smth_1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200205 06:55:45.734" endtime="20200205 06:55:46.216"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:45.734" endtime="20200205 06:55:46.216"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200205 06:55:46.216" endtime="20200205 06:55:48.398"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:45.734" endtime="20200205 06:55:48.398"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+</tags>
+<status status="FAIL" starttime="20200205 06:55:30.723" endtime="20200205 06:55:48.398" critical="yes">Element with locator 'css:iframe[id*='tabfr_']' not found.</status>
+</test>
+<test id="s1-t2" name="2. Verify Login 2">
+<kw name="Before Test" library="base_test" type="setup">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:48.398" endtime="20200205 06:55:48.398"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${Portal_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>maximize browser window</arg>
+</arguments>
+<msg timestamp="20200205 06:55:48.398" level="INFO">Opening browser 'chrome' to base url 'https://cltqacep1490.csiqa.local/CamstarPortal'.</msg>
+<status status="PASS" starttime="20200205 06:55:48.398" endtime="20200205 06:55:53.669"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200205 06:55:53.670" endtime="20200205 06:55:54.795"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Log In</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:54.795" endtime="20200205 06:55:54.812"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:48.398" endtime="20200205 06:55:54.812"></status>
+</kw>
+<kw name="Given I logged in MFGPortal as" library="login_page">
+<arguments>
+<arg>CamstarAdmin</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${USER_NAME_TXT}</arg>
+<arg>${user_name}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:54.814" level="INFO">Typing text 'CamstarAdmin' into text field '//div[@class='aw-widgets-propertyContainer ng-scope ng-isolate-scope']//aw-property-text-box-val[@class='ng-isolate-scope']//input[@type='text']'.</msg>
+<status status="PASS" starttime="20200205 06:55:54.813" endtime="20200205 06:55:55.139"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASSWORD_TXT}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:55.140" level="INFO">Typing text 'JJuneSummer((99' into text field '//div[@class='aw-widgets-propertyContainer ng-isolate-scope']//input[@type='password']'.</msg>
+<status status="PASS" starttime="20200205 06:55:55.139" endtime="20200205 06:55:55.294"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${DOMAIN_TXT}</arg>
+<arg>${DOMAIN}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:55.294" level="INFO">Typing text 'csiqa.local' into text field '//input[contains(@class,'gwt-ListBox')]'.</msg>
+<status status="PASS" starttime="20200205 06:55:55.294" endtime="20200205 06:55:55.471"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOG_ON_BTN}</arg>
+</arguments>
+<msg timestamp="20200205 06:55:55.471" level="INFO">Clicking button '//button[@class='aw-base-blk-button ng-scope ng-isolate-scope']'.</msg>
+<status status="PASS" starttime="20200205 06:55:55.471" endtime="20200205 06:55:55.559"></status>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.readyState === 'complete'</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:55.559" endtime="20200205 06:55:55.565"></status>
+</kw>
+<kw name="Do Nothing" library="CustomLib">
+<arguments>
+<arg>Hello World</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:55.565" endtime="20200205 06:55:55.565"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:54.813" endtime="20200205 06:55:55.565"></status>
+</kw>
+<kw name="After Test" library="base_test" type="teardown">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'Positive' in @{TEST TAGS}</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}_{index}.png</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${TEST_NAME}_{index}.png</arg>
+</arguments>
+<msg timestamp="20200205 06:55:57.383" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2020-02-05%2006.55.30%20Sample/2.%20Verify%20Login%202_1.png"&gt;&lt;img src="screenshots/2020-02-05%2006.55.30%20Sample/2.%20Verify%20Login%202_1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200205 06:55:55.567" endtime="20200205 06:55:57.383"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:55.566" endtime="20200205 06:55:57.383"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200205 06:55:57.384" endtime="20200205 06:55:59.570"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:55.565" endtime="20200205 06:55:59.570"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+</tags>
+<status status="PASS" starttime="20200205 06:55:48.398" endtime="20200205 06:55:59.570" critical="yes"></status>
+</test>
+<test id="s1-t3" name="3. Verify Login 3">
+<kw name="Before Test" library="base_test" type="setup">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:55:59.570" endtime="20200205 06:55:59.570"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${Portal_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>maximize browser window</arg>
+</arguments>
+<msg timestamp="20200205 06:55:59.570" level="INFO">Opening browser 'chrome' to base url 'https://cltqacep1490.csiqa.local/CamstarPortal'.</msg>
+<status status="PASS" starttime="20200205 06:55:59.570" endtime="20200205 06:56:04.596"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200205 06:56:04.597" endtime="20200205 06:56:05.843"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Log In</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:56:05.843" endtime="20200205 06:56:05.894"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:55:59.570" endtime="20200205 06:56:05.895"></status>
+</kw>
+<kw name="Given I logged in MFGPortal as" library="login_page">
+<arguments>
+<arg>CamstarAdmin</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${USER_NAME_TXT}</arg>
+<arg>${user_name}</arg>
+</arguments>
+<msg timestamp="20200205 06:56:05.896" level="INFO">Typing text 'CamstarAdmin' into text field '//div[@class='aw-widgets-propertyContainer ng-scope ng-isolate-scope']//aw-property-text-box-val[@class='ng-isolate-scope']//input[@type='text']'.</msg>
+<status status="PASS" starttime="20200205 06:56:05.896" endtime="20200205 06:56:06.088"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASSWORD_TXT}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20200205 06:56:06.089" level="INFO">Typing text 'JJuneSummer((99' into text field '//div[@class='aw-widgets-propertyContainer ng-isolate-scope']//input[@type='password']'.</msg>
+<status status="PASS" starttime="20200205 06:56:06.088" endtime="20200205 06:56:06.244"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${DOMAIN_TXT}</arg>
+<arg>${DOMAIN}</arg>
+</arguments>
+<msg timestamp="20200205 06:56:06.244" level="INFO">Typing text 'csiqa.local' into text field '//input[contains(@class,'gwt-ListBox')]'.</msg>
+<status status="PASS" starttime="20200205 06:56:06.244" endtime="20200205 06:56:06.395"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOG_ON_BTN}</arg>
+</arguments>
+<msg timestamp="20200205 06:56:06.395" level="INFO">Clicking button '//button[@class='aw-base-blk-button ng-scope ng-isolate-scope']'.</msg>
+<status status="PASS" starttime="20200205 06:56:06.395" endtime="20200205 06:56:06.483"></status>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.readyState === 'complete'</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:56:06.484" endtime="20200205 06:56:06.490"></status>
+</kw>
+<kw name="Do Nothing" library="CustomLib">
+<arguments>
+<arg>Hello World</arg>
+</arguments>
+<status status="PASS" starttime="20200205 06:56:06.490" endtime="20200205 06:56:06.491"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:56:05.895" endtime="20200205 06:56:06.491"></status>
+</kw>
+<kw name="After Test" library="base_test" type="teardown">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'Positive' in @{TEST TAGS}</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}_{index}.png</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${TEST_NAME}_{index}.png</arg>
+</arguments>
+<msg timestamp="20200205 06:56:08.332" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2020-02-05%2006.55.30%20Sample/3.%20Verify%20Login%203_1.png"&gt;&lt;img src="screenshots/2020-02-05%2006.55.30%20Sample/3.%20Verify%20Login%203_1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200205 06:56:06.492" endtime="20200205 06:56:08.332"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:56:06.491" endtime="20200205 06:56:08.332"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200205 06:56:08.333" endtime="20200205 06:56:10.537"></status>
+</kw>
+<status status="PASS" starttime="20200205 06:56:06.491" endtime="20200205 06:56:10.537"></status>
+</kw>
+<tags>
+<tag>Positive</tag>
+</tags>
+<status status="PASS" starttime="20200205 06:55:59.570" endtime="20200205 06:56:10.537" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20200205 06:55:30.379" endtime="20200205 06:56:10.537"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="1">Positive</stat>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="Sample">Sample</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
