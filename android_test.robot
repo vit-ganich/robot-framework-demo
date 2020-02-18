@@ -17,19 +17,19 @@ Library  AppiumLibrary
 
 
 *** Variables ***
-${appium_host}=         http://10.50.17.14:4723/wd/hub
+${appium_host}=           http://10.50.17.14:4723/wd/hub
 ${platform_name}=       Android
-${platform_ver}=        9
 ${udid}=                emulator-5554
-${device_name}=         Nexus 7 2012 API 28
-${app_url}=             https://cltqacep1490.csiqa.local
+#${device_name}=         Nexus 7 2012 API 28
+${device_name}=         10.50.17.14:5554
+#${porta_url}=             https://cltqacep1490.csiqa.local
+${porta_url}=           https://10.50.19.98/CamstarPortal/
 
 
 *** Test Cases ***
 Open app on Android
-    open application   ${appium_host}
+    open application   remote_url=${appium_host}
                         ...     platformName=${platform_name}
                         ...     deviceName=${device_name}
                         ...     udid=${udid}
-                        ...     platformVersion=${platform_ver}
-                        ...     app=${app_url}
+                        ...     app=${porta_url}
